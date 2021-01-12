@@ -16,7 +16,7 @@ higher = []
 lower = []
 draw = []
 suit = []
-vals = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+vals = list(range(2,14))
 suits = ['S', 'C', 'H', 'D']
 
 deck = list(itertools.product(vals, suits))
