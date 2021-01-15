@@ -16,17 +16,37 @@ higher = []
 lower = []
 draw = []
 suit = []
-vals = list(range(2,14))
+vals = list(range(2,15))
+vals_high = ['J','Q','K','A']
 suits = ['S', 'C', 'H', 'D']
+vals2 = []
+deck2 = []
+for num in vals:
+    if num < 11:
+        vals2.append(str(num))
+for letter in vals_high:
+    vals2.append(letter)
 
 deck = list(itertools.product(vals, suits))
+for i in vals2:
+    for ii in suits:
+        deck2.append(i+ii)
 
 ans = 'Y'
 skip = 'Y'
 
 print('Please input in this format - i.e. For 7 of Spades type 7s and King of Hearts type kh')
 
-x = input('What is the face up card? ').upper()
+while True:
+    x = input('What is the face up card? ').upper()
+    try:
+        deck2.index(x)
+    except:
+        print('You made a Typo!')
+    if x in deck2:
+        break
+    else:
+        print('Please Enter face up card again.')
 
 while ans == 'Y':
 
